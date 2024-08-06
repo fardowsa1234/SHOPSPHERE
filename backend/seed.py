@@ -1,36 +1,36 @@
-from faker import Faker
-from config import app, db, bcrypt
-from models import User
+# from faker import Faker
+# from config import app, db, bcrypt
+# from models import User
 
-fake = Faker()
+# fake = Faker()
 
-def seed_data():
-    with app.app_context():
-        print("Deleting all records...")
-        db.session.query(User).delete()
+# def seed_data():
+#     with app.app_context():
+#         print("Deleting all records...")
+#         db.session.query(User).delete()
 
-        print("Creating users...")
-        users = []
-        names = []
+#         print("Creating users...")
+#         users = []
+#         names = []
 
         
-        email = fake.email()
+#         email = fake.email()
 
-        user = User(
+#         user = User(
                 
-                email=email,
+#                 email=email,
                
-            )
+#             )
 
-        password = "newpass"
-        user.password_hash = bcrypt.generate_password_hash(password).decode("utf-8")
+#         password = "newpass"
+#         user.password_hash = bcrypt.generate_password_hash(password).decode("utf-8")
 
-        db.session.add(user)
-        db.session.commit()
+#         db.session.add(user)
+#         db.session.commit()
 
-        users.append(user)
+#         users.append(user)
 
-        print("Complete.")
+#         print("Complete.")
 
-if __name__ == "__main__":
-    seed_data()
+# if __name__ == "__main__":
+#     seed_data()

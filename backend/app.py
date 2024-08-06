@@ -21,8 +21,7 @@ class User(db.Model):
     name = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
-    bio = db.Column(db.String(500))
-    image_url = db.Column(db.String(200))
+    
 
     def authenticate(self, password):
         return bcrypt.check_password_hash(self.password_hash, password)
@@ -46,7 +45,7 @@ class Register(Resource):
         password = request.json.get('confirm password')
         password = request.json.get('password')
         email = request.json.get('email')
-        user = User(name=password, email=email,)
+        user = User(password=password, email=email,)
         user.password_hash = bcrypt.generate_password_hash(password).decode("utf-8")
         db.session.add(user)
         db.session.commit()
