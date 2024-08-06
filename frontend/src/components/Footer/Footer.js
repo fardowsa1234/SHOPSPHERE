@@ -11,7 +11,7 @@ const Footer = () => {
           <div className='vert-line'></div>
           <Link to = "/" className='text-uppercase'>service</Link>
           <div className='vert-line'></div>
-          <Link to = "/" className='text-uppercase'>About ShopSphere.</Link>
+          <Link to = "/about" className='text-uppercase'>About ShopSphere.</Link>
         </div>
         <span className='text-white copyright-text text-manrope fs-14 fw-3'>&copy; 2024 ShopSphere. All Rights Reserved.</span>
       </div>

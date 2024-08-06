@@ -1,0 +1,75 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f3f4f6; // bg-gray-100
+  
+    h1 {
+      font-size: 2.25rem; // text-4xl
+      font-weight: bold;
+      margin-bottom: 1rem; // mb-4
+    }
+  
+    form {
+      width: 100%;
+      max-width: 24rem; // max-w-sm
+      background-color: #ffffff; // bg-white
+      padding: 1.5rem; // p-6
+      border-radius: 0.5rem; // rounded-lg
+      box-shadow: orangered; // shadow-md
+  
+      .form-group {
+        margin-bottom: 1rem; // mb-4
+  
+        label {
+          display: block;
+          font-size: 0.875rem; // text-sm
+          font-weight: 500; // font-medium
+          color: #374151; // text-gray-700
+          margin-bottom: 0.25rem; // mb-1
+        }
+  
+        input {
+          width: 100%;
+          padding: 0.5rem 0.75rem; // py-2 px-3
+          border: 1px solid #d1d5db; // border border-gray-300
+          border-radius: 0.25rem; // rounded-md
+          font-size: 0.875rem; // text-sm
+  
+          &:focus {
+            outline: none;
+            border-color: orangered; // focus:border-blue-500
+            box-shadow: orangered; // focus:ring-2 focus:ring-blue-500
+          }
+        }
+  
+        .error {
+          color: orangered; // text-red-500
+          font-size: 0.75rem; // text-xs
+          margin-top: 0.25rem; // mt-1
+        }
+      }
+  
+      .submit-button {
+        width: 100%;
+        padding: 0.5rem 1rem; // py-2 px-4
+        background-color: orangered; // bg-blue-500
+        color: #ffffff; // text-white
+        font-size: 0.875rem; // text-sm
+        font-weight: 500; // font-medium
+        border-radius: 0.25rem; // rounded-md
+        transition: background-color 0.2s;
+  
+        &:hover {
+          background-color: orangered; // hover:bg-blue-600
+        }
+  
+        &:focus {
+          outline: none;
+          box-shadow: orangered; // focus:ring-2 focus:ring-blue-500
+        }
+      }
+    }
+  }
