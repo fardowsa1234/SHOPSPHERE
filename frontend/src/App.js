@@ -6,11 +6,24 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import store from "./store/store";
 import Login from "./components/Login/Login";
-import LoginModal from './components/Login/LoginModal';
 import Register from "./components/Register/Register";
-import RegisterModal from './components/Register/RegisterModal';
 import AboutPage from './pages/About/About';
-import Checkout from './pages/checkout/checkout'; // Corrected import path
+import Checkout from './components/Checkout/checkout';
+import CategoryProductPage from './pages/CategoryProductPage/CategoryProductPage';
+
+// Admin Components
+import Dashboard from "./Admin/Dashboard/Dashboard";
+import Users from "./Admin/User Pages/Users";
+import User from "./Admin/User Pages/User";
+import Orders from "./Admin/Orders Pages/Orders";
+import Order from "./Admin/Orders Pages/Order";
+import Categories from "./Admin/Category Pages/Categories";
+import AddCategory from "./Admin/Category Pages/AddCategory";
+import EditCategory from "./Admin/Category Pages/EditCategory";
+import CategoryProductAdmin from "./Admin/Category Pages/CategoryProduct";
+import Products from "./Admin/Product Pages/Products";
+import AddProduct from "./Admin/Product Pages/AddProduct";
+import EditProduct from "./Admin/Product Pages/EditProduct";
 
 import { Provider } from "react-redux";
 
@@ -23,24 +36,32 @@ function App() {
           <Sidebar />
 
           <Routes>
-            {/* home page route */}
+            {/* Public Routes */}
             <Route path="/" element={<Home />} />
-            {/* single product route */}
             <Route path="/product/:id" element={<ProductSingle />} />
-            {/* category wise product listing route */}
             <Route path="/category/:category" element={<CategoryProduct />} />
-            {/* cart */}
             <Route path="/cart" element={<Cart />} />
-            {/* checkout */}
-            <Route path="/checkout" element={<Checkout />} />
-            {/* searched products */}
             <Route path="/search/:searchTerm" element={<Search />} />
-            {/* login page */}
-            <Route path="/login" element={<Login showModal={true} />} />
-            {/* register page */}
-            <Route path="/register" element={<Register showModal={true} />} />
-            {/* about page */}
+            <Route path="/login" element={<Login LoginModal={true} />} />
+            <Route path="/register" element={<Register RegisterModal={true} />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/category-product/:id" element={<CategoryProductPage />} />
+            <Route path="/checkout" element={<Checkout />} />
+
+            {/* Admin Routes */}
+            <Route path="/admin/dashboard" element={<Dashboard />} />
+            <Route path="/admin/users" element={<Users />} />
+            <Route path="/admin/users/:userId" element={<User />} />
+            <Route path="/admin/orders" element={<Orders />} />
+            <Route path="/admin/orders/:orderId" element={<Order />} />
+            <Route path="/admin/categories" element={<Categories />} />
+            <Route path="/admin/categories/add" element={<AddCategory />} />
+            <Route path="/admin/categories/products/:categoryId" element={<CategoryProductAdmin />} />
+            <Route path="/admin/categories/edit/:categoryId" element={<EditCategory />} />
+            <Route path="/admin/products" element={<Products />} />
+            <Route path="/admin/complaints" element={<Complaints />} />
+            <Route path="/admin/products/add" element={<AddProduct />} />
+            <Route path="/admin/products/edit/:productId" element={<EditProduct />} />
           </Routes>
 
           <Footer />
