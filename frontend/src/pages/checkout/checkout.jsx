@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import './style.css'; // Adjust the path based on your file structure
+import './style.scss'; // Adjust the path based on your file structure
 
 const Checkout = () => {
   const { state } = useLocation();
