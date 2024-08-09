@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 import { RiDeleteBin3Line, RiEditLine } from "react-icons/ri";
 
 import "./Products.css";
@@ -67,7 +67,7 @@ function Products() {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="products-content" lg={10}>
           <Row>

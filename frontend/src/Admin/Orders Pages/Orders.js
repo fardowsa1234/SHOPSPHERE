@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/Sidebar/Sidebar";
 import { DataGrid } from "@mui/x-data-grid";
 
 import "./Orders.css";
@@ -19,7 +19,7 @@ function Orders() {
     setOrders();
     axios({
       method: "get",
-      url: "https://ecommerceappcj.herokuapp.com/api/orders/",
+      url: "/api/orders/",
     }).then((response) => {
       setOrders(response.data.allOrders);
     });
@@ -73,7 +73,7 @@ function Orders() {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="orders-content" lg={10}>
           <h4>Orders</h4>

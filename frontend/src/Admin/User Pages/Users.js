@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 
 import {
   RiMailLine,
@@ -27,7 +27,7 @@ function Users() {
     setFilteredUsers([]);
     axios({
       method: "get",
-      url: "https://ecommerceappcj.herokuapp.com/api/users/",
+      url: "/api/users/",
     }).then((response) => {
       setFilteredUsers(response.data.allUsers);
       setUsers(response.data.allUsers);
@@ -60,14 +60,14 @@ function Users() {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="users-content" lg={10}>
           <Row>
             <Col lg={8}>
               <h4>Users</h4>
               <p>
-                Below are the customers that have registered on your website.
+                Below are the customers that have registered on your shopsphere.
               </p>
             </Col>
             <Col className="users-search-col">

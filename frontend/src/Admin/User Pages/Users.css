@@ -16,7 +16,7 @@
 
 .users-content hr {
     margin: 12px 0 !important;
-    color: #2d46b9 !important;
+    color: orangered !important;
 }
 
 .users-search-col {
@@ -84,7 +84,7 @@
 .user-card-icon {
     margin-right: 8px !important;
     font-size: 16px;
-    color: #2d46b9;
+    color: orangered;
 }
 
 .user-link {
@@ -97,7 +97,7 @@
 }
 
 .user-link:hover {
-    color: #2d46b9;
+    color: orangered;
     transform: scale(1.1);
     cursor: pointer;
 }
@@ -122,5 +122,5 @@
 }
 
 .users-row::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(150, 150, 150) !important;
+    background-color: white !important;
 }

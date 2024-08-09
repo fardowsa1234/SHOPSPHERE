@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // Updated import
 
@@ -26,7 +26,7 @@ function EditProduct(props) {
     setProductData();
     axios({
       method: "get",
-      url: `https://ecommerceappcj.herokuapp.com/api/products/product/${productId}`,
+      url: `/api/products/product/${productId}`,
     })
       .then((response) => {
         setProductData(response.data.product);
@@ -43,7 +43,7 @@ function EditProduct(props) {
     setCategories([]);
     axios({
       method: "get",
-      url: "https://ecommerceappcj.herokuapp.com/api/categories/",
+      url: "/api/categories/",
     }).then((response) => {
       setCategories(response.data.categories);
     });
@@ -71,7 +71,7 @@ function EditProduct(props) {
     try {
       axios({
         method: "patch",
-        url: `https://ecommerceappcj.herokuapp.com/api/products/update/${productId}`,
+        url: `/api/products/update/${productId}`,
         data: {
           name: productData.name,
           price: productData.price,
@@ -85,7 +85,7 @@ function EditProduct(props) {
           formData.append("image", image);
           axios({
             method: "patch",
-            url: `https://ecommerceappcj.herokuapp.com/api/products/update/image/${productId}`,
+            url: `/api/products/update/image/${productId}`,
             data: formData,
           }).then(() => {
             setImagePreview("");
@@ -119,7 +119,7 @@ function EditProduct(props) {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="add-product-content" lg={10}>
           <h4>Update Product</h4>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 import axios from "axios";
 
 import "./AddProduct.css";
@@ -24,7 +24,7 @@ function AddProduct() {
     setCategories([]);
     axios({
       method: "get",
-      url: "https://ecommerceappcj.herokuapp.com/api/categories/",
+      url: "/api/categories/",
     }).then(function (response) {
       setCategories(response.data.categories);
     });
@@ -64,7 +64,7 @@ function AddProduct() {
       formData.append("description", newProduct.desc);
       axios({
         method: "post",
-        url: "https://ecommerceappcj.herokuapp.com/api/products/create/product/",
+        url: "/api/products/create/product/",
         data: formData,
       }).then((response) => {
         setImagePreview();
@@ -85,7 +85,7 @@ function AddProduct() {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="add-product-content" lg={10}>
           <h4>Add Product</h4>

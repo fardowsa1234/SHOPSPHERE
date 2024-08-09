@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 import { RiAddFill, RiEditLine, RiEyeLine } from "react-icons/ri";
 
 import "./Categories.css";
@@ -18,7 +18,7 @@ function Categories() {
     setCategories([]);
     axios({
       method: "get",
-      url: "https://ecommerceappcj.herokuapp.com/api/categories/",
+      url: "/api/categories/",
     }).then(function (response) {
       setCategories(response.data.categories);
     });
@@ -28,7 +28,7 @@ function Categories() {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="categories-content" lg={10}>
           <Row>
@@ -60,7 +60,7 @@ function Categories() {
                 <Col lg={3}>
                   <Card className="category-card">
                     <img
-                      src={`https://ecommerceappcj.herokuapp.com/${category.image}`}
+                      src={`/${category.image}`}
                       alt={category.name}
                     />
                     <h5>{category.name}</h5>

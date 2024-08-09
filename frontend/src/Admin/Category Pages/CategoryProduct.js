@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 import { RiDeleteBin3Line, RiEditLine } from "react-icons/ri";
-
 import "./CategoryProduct.css";
 import { Link } from "react-router-dom";
 
@@ -31,7 +30,7 @@ function CategoryProduct(props) {
   const deleteProduct = (productId) => {
     axios({
       method: "delete",
-      url: `https://ecommerceappcj.herokuapp.com/api/products/delete/${productId}`,
+      url: `/api/products/delete/${productId}`,
     }).then((response) => {
       console.log(response.data);
       getProducts();
@@ -67,7 +66,7 @@ function CategoryProduct(props) {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="category-products-content" lg={10}>
           <Row>
@@ -97,7 +96,7 @@ function CategoryProduct(props) {
                 <Col lg={3}>
                   <Card className="category-product-card">
                     <img
-                      src={`https://ecommerceappcj.herokuapp.com/${product.image}`}
+                      src={`/${product.image}`}
                       alt={product.name}
                     />
                     <h5>{product.name}</h5>

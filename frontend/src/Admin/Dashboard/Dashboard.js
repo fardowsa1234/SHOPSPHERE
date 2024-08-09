@@ -25,19 +25,19 @@ function Dashboard() {
 
   const getProducts = () => {
     setProducts();
-    axios.get("https://ecommerceappcj.herokuapp.com/api/products/")
+    axios.get("/api/products/")
       .then(response => setProducts(response.data.products));
   };
 
   const getUsers = () => {
     setUsers();
-    axios.get("https://ecommerceappcj.herokuapp.com/api/users/")
+    axios.get("/api/users/")
       .then(response => setUsers(response.data.allUsers));
   };
 
   const getOrders = () => {
     setOrders();
-    axios.get("https://ecommerceappcj.herokuapp.com/api/orders/")
+    axios.get("/api/orders/")
       .then(response => {
         setOrders(response.data.allOrders);
         const rev = response.data.allOrders.reduce((acc, order) => acc + order.orderAmount, 0);

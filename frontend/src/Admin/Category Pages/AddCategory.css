@@ -6,12 +6,12 @@
 .add-category-content h4 {
     font-weight: 600;
     font-size: 32px;
-    color: rgba(0, 0, 0, 0.7);
+    color: orangered;
     margin: 12px 0 12px 0 !important;
 }
 
 .add-category-content p {
-    color: rgba(0, 0, 0, 0.6);
+    color: orangered;
 }
 
 .add-category-form-card {
@@ -23,14 +23,14 @@
 }
 
 .add-category-input-div {
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid orangered;
     padding: 8px !important;
     border-radius: 12px;
     margin: 12px 12px 12px 0 !important;
 }
 
 .add-category-image-div {
-    border: 1px dashed rgba(0, 0, 0, 0.35) !important;
+    border: 1px dashed orangered !important;
     padding: 0px !important;
     border-radius: 12px;
     margin: 12px 12px 12px 0 !important;
@@ -38,7 +38,7 @@
 }
 
 .add-category-image-div:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: orangered;
     cursor: pointer;
 }
 
@@ -66,13 +66,13 @@
     border-radius: 12px;
     margin-right: 12px !important;
     background-color: white;
-    color: #2D46B9;
-    border: 1px solid #2d46b9 !important;
+    color: orangered;
+    border: 1px solid orangered !important;
     transition: 0.2s ease-in-out;
 }
 
 .add-category-btn:hover {
-    background-color: #2D46B9;
+    background-color: orangered;
     color: #fff;
 }
 

@@ -6,17 +6,17 @@
 .categories-content h4 {
     font-weight: 600;
     font-size: 32px;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgb(36, 35, 35);
     margin: 12px 0 12px 0 !important;
 }
 
 .categories-content p {
-    color: rgba(0, 0, 0, 0.6);
+    color: rgb(17, 17, 17);
 }
 
 .categories-content hr {
     margin: 12px 0 !important;
-    color: #2D46B9;
+    color: orangered;
 }
 
 .category-card {
@@ -37,7 +37,7 @@
 
 .category-card h5 {
     font-size: 18px;
-    color: #2D46B9;
+    color: orangered;
 }
 
 .add-cat-col {
@@ -48,7 +48,7 @@
 
 .add-cat-btn {
     font-size: 24px;
-    color: rgba(0, 0, 0, 0.5) !important;
+    color: orangered !important;
 }
 
 .add-cat-col div {
@@ -59,11 +59,11 @@
 
 .add-cat-col div:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.075);
+    background-color: orangered;
 }
 
 .add-cat-btn:hover {
-    color: #2D46B9 !important;
+    color: orangered !important;
 }
 
 .add-cat-overlay {
@@ -78,7 +78,7 @@
     font-size: 20px;
     top: 20px;
     right: 16px;
-    color: rgba(0, 0, 0, 0.65);
+    color: orangered;
     transition: 0.2s ease-in-out;
 }
 
@@ -89,7 +89,7 @@
 .edit-cat-btn:hover,
 .view-prod-btn:hover {
     cursor: pointer;
-    color: #2d46b9;
+    color: orangered;
 }
 
 .categories-row {
@@ -113,5 +113,5 @@
 }
 
 .categories-row::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(150, 150, 150) !important;
+    background-color: white !important;
 }

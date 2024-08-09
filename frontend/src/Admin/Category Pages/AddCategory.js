@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 import axios from "axios";
 
 import "./AddCategory.css";
@@ -40,7 +40,7 @@ function AddCategory() {
       formData.append("image", image);
       axios({
         method: "post",
-        url: "https://ecommerceappcj.herokuapp.com/api/categories/",
+        url: "/api/categories/",
         data: formData,
       }).then((response) => {
         setImagePreview();
@@ -56,7 +56,7 @@ function AddCategory() {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="add-category-content" lg={10}>
           <h4>Add Category</h4>

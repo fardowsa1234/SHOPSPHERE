@@ -41,7 +41,7 @@
 
 .single-user-card h4 {
     margin: 12px auto !important;
-    color: #2d46b9;
+    color: orangered;
 }
 
 .user-details-col hr {
@@ -59,7 +59,7 @@
 
 .user-details-col p .icon {
     font-size: 20px;
-    color: #2d46b9;
+    color: orangered;
     margin-right: 10px !important;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .orders-div::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(150, 150, 150) !important;
+    background-color: white !important;
 }
 
 .user-order-card {

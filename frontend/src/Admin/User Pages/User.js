@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 import { Link } from "react-router-dom";
 import {
   RiMailLine,
@@ -24,7 +24,7 @@ function User(props) {
     setUser();
     axios({
       method: "get",
-      url: `https://ecommerceappcj.herokuapp.com/api/users/${userId}`,
+      url: `/api/users/${userId}`,
     }).then((response) => {
       setUser(response.data.user);
     });
@@ -34,7 +34,7 @@ function User(props) {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         {user && (
           <Col className="user-content" lg={10}>

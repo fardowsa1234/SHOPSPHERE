@@ -8,10 +8,11 @@ import store from "./store/store";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import AboutPage from './pages/About/About';
-import Checkout from './components/Checkout/checkout';
+import Checkout from "./pages/checkout/checkout";
 import CategoryProductPage from './pages/CategoryProductPage/CategoryProductPage';
 
 // Admin Components
+import SidebarAdmin from './components/SidebarAdmin/SidebarAdmin';
 import Dashboard from "./Admin/Dashboard/Dashboard";
 import Users from "./Admin/User Pages/Users";
 import User from "./Admin/User Pages/User";
@@ -34,6 +35,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Sidebar />
+          <SidebarAdmin />
 
           <Routes>
             {/* Public Routes */}
@@ -59,7 +61,6 @@ function App() {
             <Route path="/admin/categories/products/:categoryId" element={<CategoryProductAdmin />} />
             <Route path="/admin/categories/edit/:categoryId" element={<EditCategory />} />
             <Route path="/admin/products" element={<Products />} />
-            <Route path="/admin/complaints" element={<Complaints />} />
             <Route path="/admin/products/add" element={<AddProduct />} />
             <Route path="/admin/products/edit/:productId" element={<EditProduct />} />
           </Routes>

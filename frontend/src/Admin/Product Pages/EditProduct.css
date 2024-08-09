@@ -66,13 +66,13 @@
     border-radius: 12px;
     margin-right: 12px !important;
     background-color: white;
-    color: #2D46B9;
-    border: 1px solid #2d46b9 !important;
+    color: orangered;
+    border: 1px solid orangered !important;
     transition: 0.2s ease-in-out;
 }
 
 .edit-product-btn:hover {
-    background-color: #2D46B9;
+    background-color: orangered;
     color: #fff;
 }
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SidebarAdmin from "../../components/SidebarAdmin/SidebarAdmin";
 import {
   RiMailLine,
   RiPhoneLine,
@@ -45,7 +45,7 @@ function Order(props) {
   const getOrder = () => {
     axios({
       method: "get",
-      url: `https://ecommerceappcj.herokuapp.com/api/orders/order/${orderId}`,
+      url: `https://dummyjson.com/api/orders/order/${orderId}`,
     }).then((response) => {
       setOrder(response.data.order);
       console.log(response.data.order);
@@ -56,7 +56,7 @@ function Order(props) {
     event.preventDefault();
     axios({
       method: "patch",
-      url: `https://ecommerceappcj.herokuapp.com/api/orders/${orderId}`,
+      url: `https://dummyjson.com/api/orders/${orderId}`,
       data: {
         status: status,
         shippedAt: shippedAt,
@@ -71,7 +71,7 @@ function Order(props) {
     event.preventDefault();
     axios({
       method: "delete",
-      url: `https://ecommerceappcj.herokuapp.com/api/orders/${orderId}`,
+      url: `https://dummyjson.com/api/orders/${orderId}`,
     }).then(() => {
       navigate("/orders"); // Use navigate instead of history.push
     });
@@ -81,7 +81,7 @@ function Order(props) {
     <div className="dashboard-parent-div">
       <Row>
         <Col lg={2}>
-          <Sidebar />
+          <SidebarAdmin />
         </Col>
         <Col className="single-order-content" lg={10}>
           {order && order.userId && (
@@ -89,7 +89,7 @@ function Order(props) {
               <Row className="order-user-details">
                 <Col lg={3}>
                   <img
-                    src={`https://ecommerceappcj.herokuapp.com/${order.userId.image}`}
+                    src={`/${order.userId.image}`}
                     alt={order.userId.name}
                   />
                 </Col>
@@ -214,7 +214,7 @@ function Order(props) {
                         <Row className="product-card-row">
                           <Col className="product-image-col">
                             <img
-                              src={`https://ecommerceappcj.herokuapp.com/${item.productId.image}`}
+                              src={`/${item.productId.image}`}
                               alt={item.productId.name}
                             />
                           </Col>

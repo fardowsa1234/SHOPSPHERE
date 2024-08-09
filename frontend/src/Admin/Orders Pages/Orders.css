@@ -16,7 +16,7 @@
 
 .orders-content hr {
     margin: 12px 0 !important;
-    color: #2d46b9 !important;
+    color: orangered !important;
 }
 
 .MuiDataGrid-columnHeader,
@@ -67,6 +67,6 @@
 }
 
 .MuiDataGrid-window::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(150, 149, 149) !important;
+    background-color: orangered !important;
     border-radius: 16px !important;
 }
