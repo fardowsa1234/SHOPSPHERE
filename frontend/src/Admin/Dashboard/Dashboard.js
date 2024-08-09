@@ -4,7 +4,7 @@ import {
   RiUser3Line,
 } from "react-icons/ri";
 import { IoIosLaptop } from "react-icons/io";
-import { BiRupee } from "react-icons/bi";
+import { BsCurrencyExchange } from "react-icons/bs";
 import { BsViewList } from "react-icons/bs";
 import { FaLaptopMedical } from "react-icons/fa";
 import "./Dashboard.css"; // Import the CSS file for custom styling
@@ -51,20 +51,15 @@ function Dashboard() {
         <h4>Dashboard</h4>
         <p>Here's an overview of your online business.</p>
         <div className="dashboard-cards-container">
-          <div className="dashboard-card">
-            <RiShoppingCart2Line className="card-icon" />
-            <h4>{orders ? orders.length : 0} Orders</h4>
-            <p>{orders ? orders.length : 0} orders placed</p>
-          </div>
-          <div className="dashboard-card">
-            <BiRupee className="card-icon" />
-            <h4>
-              {totalRevenue ? totalRevenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0} Total Revenue
-            </h4>
-            <p>
-              {totalRevenue ? totalRevenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0} revenue generated
-            </p>
-          </div>
+        <div className="dashboard-card">
+  <BsCurrencyExchange className="card-icon" />
+  <h4>
+    Ksh {totalRevenue ? totalRevenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0} Total Revenue
+  </h4>
+  <p>
+    Ksh {totalRevenue ? totalRevenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : 0} revenue generated
+  </p>
+</div>
           <div className="dashboard-card">
             <IoIosLaptop className="card-icon" />
             <h4>{products ? products.length : 0} Products</h4>
