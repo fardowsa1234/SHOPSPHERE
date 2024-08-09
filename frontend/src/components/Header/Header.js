@@ -13,17 +13,17 @@ const Header = () => {
               <ul className='flex top-links align-center'>
                 <li>
                   
-                  <Link to = "/seller">Vendor Center</Link>
+                  <Link to = "/seller">ShopSphere Admin</Link>
                 </li>
                 <li className='vert-line'></li>
-                <li>
+                {/* <li>
 
                   <Link to = "/account">User Account</Link>
-                </li>
-                <li className='vert-line'></li>
+                </li> */}
+                {/* <li className='vert-line'></li>
                 <li className='flex align-center'>
       
-                    </li>
+                    </li> */}
                   </ul>
             </div>
             <div className='header-cnt-top-r'>
