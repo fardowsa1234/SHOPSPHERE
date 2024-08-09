@@ -2,25 +2,27 @@ import React from 'react';
 import "./CartPage.scss";
 import { useSelector, useDispatch } from 'react-redux';
 import { shopping_cart } from '../../utils/images';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link } from 'react-router-dom'; // Add this import statement
 import { formatPrice } from '../../utils/helpers';
-import { getAllCarts, removeFromCart, toggleCartQty, clearCart, getCartTotal } from '../../store/cartSlice';
+import { getAllCarts, removeFromCart, toggleCartQty, clearCart } from '../../store/cartSlice';
 
 const CartPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize useNavigate
   const carts = useSelector(getAllCarts);
-  const { itemsCount, totalAmount} = useSelector((state) => state.cart);
+  const { itemsCount, totalAmount } = useSelector((state) => state.cart);
 
-  if(carts.length === 0){
+  if (carts.length === 0) {
     return (
       <div className='container my-5'>
         <div className='empty-cart flex justify-center align-center flex-column font-manrope'>
-          <img src = {shopping_cart} alt = "" />
+          <img src={shopping_cart} alt="" />
           <span className='fw-6 fs-15 text-gray'>Your shopping cart is empty.</span>
-          <Link to = "/" className='shopping-btn bg-orange text-white fw-5'>Go shopping Now</Link>
+          <Link to="/" className='shopping-btn bg-orange text-white fw-5'>Go shopping Now</Link>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -54,7 +56,7 @@ const CartPage = () => {
             {
               carts.map((cart, idx) => {
                 return (
-                  <div className='cart-ctr py-4' key = {cart?.id}>
+                  <div className='cart-ctr py-4' key={cart?.id}>
                     <div className='cart-ctd'>
                       <span className='cart-ctxt'>{idx + 1}</span>
                     </div>
@@ -66,7 +68,7 @@ const CartPage = () => {
                     </div>
                     <div className='cart-ctd'>
                       <div className='qty-change flex align-center'>
-                        <button type = "button" className='qty-decrease flex align-center justify-center' onClick={() => dispatch(toggleCartQty({id: cart?.id, type: "DEC"}))}>
+                        <button type="button" className='qty-decrease flex align-center justify-center' onClick={() => dispatch(toggleCartQty({ id: cart?.id, type: "DEC" }))}>
                           <i className='fas fa-minus'></i>
                         </button>
 
@@ -74,7 +76,7 @@ const CartPage = () => {
                           {cart?.quantity}
                         </div>
 
-                        <button type = "button" className='qty-increase flex align-center justify-center' onClick={() => dispatch(toggleCartQty({id: cart?.id, type: "INC"}))}>
+                        <button type="button" className='qty-increase flex align-center justify-center' onClick={() => dispatch(toggleCartQty({ id: cart?.id, type: "INC" }))}>
                           <i className='fas fa-plus'></i>
                         </button>
                       </div>
@@ -85,10 +87,10 @@ const CartPage = () => {
                     </div>
 
                     <div className='cart-ctd'>
-                      <button type = "button" className='delete-btn text-dark' onClick={() => dispatch(removeFromCart(cart?.id))}>Delete</button>
+                      <button type="button" className='delete-btn text-dark' onClick={() => dispatch(removeFromCart(cart?.id))}>Delete</button>
                     </div>
                   </div>
-                )
+                );
               })
             }
           </div>
@@ -107,13 +109,19 @@ const CartPage = () => {
                 <span className='text-orange fs-22 mx-2 fw-6'>{formatPrice(totalAmount)}</span>
               </div>
 
-              <button type = "button" className='checkout-btn text-white bg-orange fs-16'>Check Out</button>
+              <button 
+                type="button" 
+                className='checkout-btn text-white bg-orange fs-16'
+                onClick={() => navigate('/checkout', { state: { cartItems: carts } })} // Pass cart data to Checkout page
+              >
+                Buy Now
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default CartPage
+export default CartPage;
