@@ -10,6 +10,8 @@
 # Ignore cache directories
 /frontend/node_modules/.cache/
 
+
 # Ignore build output
 /dist/
 /build/
+frontend/node_modules/.cache/
