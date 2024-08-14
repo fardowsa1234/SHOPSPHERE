@@ -1,0 +1,98 @@
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar-parent-div {
+    width: 250px; // Fixed width for the sidebar
+    min-width: 250px; // Prevent shrinking
+    height: 100vh;
+    padding: 8px;
+    padding-bottom: 16px;
+    background-color: #f0f0f0; // Background color for the entire sidebar area
+  }
+  
+  .sidebar-content-div {
+    background-color: #fffefe;
+    border-radius: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-logo-div {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+  }
+  
+  .sidebar-logo-div h4 {
+    font-size: 20px;
+    margin-left: 8px;
+    font-weight: 600;
+    color: orangered;
+  }
+  
+  .sidebar-links-div {
+    flex-grow: 1; // Take up remaining space
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; // Allow scrolling if many items
+  }
+  
+  .sidebar-footer-div {
+    height: 8vh;
+  }
+  
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    color: orangered;
+    width: 95%;
+    padding: 12px;
+    border-radius: 12px;
+    transition: 0.2s ease-in-out;
+    margin: 6px 0;
+    margin-right: 6px;
+    border: 0.75px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-item .sidebar-icon {
+    font-size: 20px;
+  }
+  
+  .sidebar-item p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  
+  .sidebar-item.active {
+    background-color: orangered;
+    color: #fff;
+  }
+  
+  .sidebar-item:hover {
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .sidebar-footer-div p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+  
+  .sidebar-link {
+    text-decoration: none;
+    width: 100%;
+  }
+  
+  .admin-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ffffff; // Or any color you prefer for the content area
+  }

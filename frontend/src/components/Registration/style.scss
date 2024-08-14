@@ -1,0 +1,84 @@
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+  .registration-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+
+    h2 {
+      color: orangered;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: orangered;
+        box-shadow: 0 0 0 0.2rem rgba(255, 69, 0, 0.25);
+      }
+
+      &.is-invalid {
+        border-color: #dc3545;
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+        }
+      }
+    }
+
+    .invalid-feedback {
+      color: #dc3545;
+      font-size: 0.875rem;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .input-group {
+      .input-field {
+        border-right: none;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .password-toggle {
+        background-color: white;
+        border-left: none;
+        cursor: pointer;
+        &:hover {
+          background-color: #f8f9fa;
+        }
+      }
+    }
+
+    .signup-button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: orangered;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ff4500;
+      }
+    }
+  }
+}
