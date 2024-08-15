@@ -12,7 +12,7 @@ const Checkout = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     console.log(data);
-    alert('Checkout successful!');
+    alert('Thank you for shopping with us:Order completed!');
   };
 
   const updateQuantity = (id, type) => {
