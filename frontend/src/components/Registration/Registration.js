@@ -34,7 +34,7 @@ const Registration = () => {
     }
 
     try {
-      const url = "http://localhost:1337/api/auth/local/register";
+      const url = "http://localhost:5000/register";
       const res = await axios.post(url, user);
       if (res.data) {
         toast.success("Registered successfully!", {
