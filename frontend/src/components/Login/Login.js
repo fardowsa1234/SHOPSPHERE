@@ -3,10 +3,8 @@ import { Button, FormGroup, Input, InputGroup, InputGroupText } from "reactstrap
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
-import { storeUser } from "../helpers";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./style.scss";
-
 
 const initialUser = { password: "", identifier: "" };
 
@@ -49,7 +47,7 @@ const Login = () => {
     try {
       const { data } = await axios.post(url, user);
       if (data.jwt) {
-        storeUser(data);
+        // Removed storeUser and its usage
         toast.success("Logged in successfully!", {
           hideProgressBar: true,
         });

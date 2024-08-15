@@ -15,7 +15,6 @@ const About = () => {
         <h2>Here's what makes ShopSphere special:</h2>
         <ol>
           <li><strong>All Your Shopping Needs in One Place:</strong> Instead of visiting multiple websites, you can find a wide variety of products all on ShopSphere. From electronics to clothing, home goods to beauty products - we've got it all.</li>
-          <li><strong>Bringing Sellers and Shoppers Together:</strong> We connect you directly with many different sellers. This means you have access to a huge range of products and can often find great deals.</li>
           <li><strong>Easy to Use:</strong> We've designed ShopSphere to be simple and intuitive. Whether you're tech-savvy or new to online shopping, you'll find our website easy to navigate and use.</li>
           <li><strong>Something for Everyone:</strong> With our diverse range of products, you're sure to find what you're looking for, whether it's everyday essentials or unique, hard-to-find items.</li>
           <li><strong>Safe and Secure:</strong> We prioritize the security of your personal information and transactions, so you can shop with peace of mind.</li>
