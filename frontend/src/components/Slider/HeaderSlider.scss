@@ -1,0 +1,69 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slider-content {
+    width: 100%;
+    height: 70vh; // Full viewport height
+  }
+  
+  .slider-item {
+    width: 100%;
+    height: 70vh; // Full viewport height
+    position: relative;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    }
+  }
+  
+  // Cool animations
+  .slick-slide {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  
+    &.slick-active {
+      opacity: 1;
+      animation: zoomIn 5s ease-in-out forwards;
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  // Customize dots
+  .slick-dots {
+    bottom: 20px;
+  
+    li {
+      button:before {
+        font-size: 12px;
+        color: white;
+        opacity: 0.5;
+      }
+  
+      &.slick-active button:before {
+        opacity: 1;
+      }
+    }
+  }
