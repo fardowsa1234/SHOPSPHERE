@@ -43,7 +43,7 @@ const Login = () => {
       return;
     }
 
-    const url = "http://localhost:1337/api/auth/local";
+    const url = "http://localhost:5000/login";
     try {
       const { data } = await axios.post(url, user);
       if (data.jwt) {
