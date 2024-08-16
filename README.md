@@ -19,20 +19,9 @@ SCSS/CSS: For styling the application, ensuring a responsive and visually appeal
 # Backend:
 
 Python Flask: For handling server-side logic, managing API requests, and connecting to the database.
+# Contribution
+# We are excited to contribute to the One-Stop Online Shop project. Our team has experience in both frontend and backend development, and we are eager to collaborate to enhance the platform. With expertise in React, Redux, HTML, SCSS/CSS, and Python Flask, we believe our skills align well with the project’s requirements.
 
-# Folder Structure
-# /src
+We are keen to work together and support the project in any way we can. Please feel free to reach out to us at fardosaabdullahi991@gmail.com to discuss how we can best contribute to the project's success.
 
-/components: Contains reusable React components.
-/redux: Houses Redux-related files such as actions, reducers, and store configuration.
-/styles: Contains SCSS and CSS files for styling the application.
-/pages: Contains individual pages or views of the application.
-/utils: Utility functions and helper files.
-/public
-
-Static files such as HTML templates, images, and favicon.
-# /backend
-
-/app: Flask application folder containing routes, models, and controllers.
-/migrations: Database migration files.
-/config: Configuration files for the Flask application.
+Looking forward to working with the team!
