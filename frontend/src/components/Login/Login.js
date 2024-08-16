@@ -47,7 +47,7 @@ const Login = () => {
     try {
       const { data } = await axios.post(url, user);
       if (data.jwt) {
-        // Removed storeUser and its usage
+        
         toast.success("Logged in successfully!", {
           hideProgressBar: true,
         });

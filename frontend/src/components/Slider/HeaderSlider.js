@@ -15,7 +15,7 @@ const HeaderSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    fade: true, // Add fade transition
+    fade: true, 
     cssEase: 'linear'
   };
 
