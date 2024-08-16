@@ -20,7 +20,7 @@ SCSS/CSS: For styling the application, ensuring a responsive and visually appeal
 
 Python Flask: For handling server-side logic, managing API requests, and connecting to the database.
 # Contribution
-# We are excited to contribute to the One-Stop Online Shop project. Our team has experience in both frontend and backend development, and we are eager to collaborate to enhance the platform. With expertise in React, Redux, HTML, SCSS/CSS, and Python Flask, we believe our skills align well with the project’s requirements.
+# We are excited to contribute to the One-Stop Online Shop project. Our team has experience in both frontend and backend development, and we are eager to collaborate to enhance the platform. With expertise in React, Redux, HTML, SCSS/CSS we believe our skills align well with the project’s requirements.
 
 We are keen to work together and support the project in any way we can. Please feel free to reach out to us at fardosaabdullahi991@gmail.com to discuss how we can best contribute to the project's success.
 
