@@ -1,10 +1,10 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Button, FormGroup, Input, Form, InputGroup, InputGroupText } from "reactstrap";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./style.scss";
+import axios from 'axios';
 
 const initialUser = { email: "", password: "", username: "" };
 
@@ -33,8 +33,8 @@ const Registration = () => {
       return;
     }
 
+    const url = `http://localhost:5000/api/auth/local/register`;
     try {
-      const url = "http://localhost:5000/register";
       const res = await axios.post(url, user);
       if (res.data) {
         toast.success("Registered successfully!", {
@@ -113,7 +113,7 @@ const Registration = () => {
             </InputGroup>
             {errors.password && <div className="invalid-feedback">{errors.password}</div>}
           </FormGroup>
-          <Button type="submit" color="primary" className="signup-button">
+          <Button type="submit" color="primary" className="registration-button">
             Sign Up
           </Button>
         </Form>

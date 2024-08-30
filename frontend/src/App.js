@@ -11,15 +11,31 @@ import AboutPage from './pages/About/About';
 import Checkout from "./pages/checkout/checkout";
 import CategoryProductPage from './pages/CategoryProductPage/CategoryProductPage';
 
+// Admin Components
+import AdminLayout from "./components/AdminLayout";
+import Dashboard from "./Admin/Dashboard/Dashboard";
+import Categories from "./Admin/Category Pages/Categories";
+import AddCategory from "./Admin/Category Pages/AddCategory";
+import EditCategory from "./Admin/Category Pages/EditCategory";
+import CategoryProductAdmin from "./Admin/Category Pages/CategoryProduct";
+import Products from "./Admin/Product Pages/Products";
+import AddProduct from "./Admin/Product Pages/AddProduct";
+import EditProduct from "./Admin/Product Pages/EditProduct";
+
 import { Provider } from "react-redux";
 
 function App() {
+  // Assuming you store the token in localStorage
+  const jwt = localStorage.getItem('token');
+
   return (
     <div className="App">
       <Provider store={store}>
         <BrowserRouter>
           <Header />
           <Sidebar />
+          
+
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Home />} />
@@ -32,7 +48,19 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/category-product/:id" element={<CategoryProductPage />} />
             <Route path="/checkout" element={<Checkout />} />
+
+            {/* Admin Routes */}
+            <Route path="/admin" element={<AdminLayout />}></Route>
+            <Route path="/admin/dashboard" element={<Dashboard />} />
+            <Route path="/admin/categories" element={<Categories />} />
+            <Route path="/admin/categories/add" element={<AddCategory />} />
+            <Route path="/admin/categories/products/:categoryId" element={<CategoryProductAdmin />} />
+            <Route path="/admin/categories/edit/:categoryId" element={<EditCategory />} />
+            <Route path="/admin/products" element={<Products />} />
+            <Route path="/admin/products/add" element={<AddProduct />} />
+            <Route path="/admin/products/edit/:productId" element={<EditProduct />} />
           </Routes>
+
           <Footer />
         </BrowserRouter>
       </Provider>

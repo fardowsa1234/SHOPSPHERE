@@ -30,14 +30,14 @@ const Navbar = () => {
           <button type = "button" className='sidebar-show-btn text-white' onClick={() => dispatch(setSidebarOn())}>
             <i className='fas fa-bars'></i>
           </button>
-          <Link to = "/" className='navbar-brand flex align-center'>
+          
             {/* <span className='navbar-brand-ico'>
               <i className='fa-solid fa-bag-shopping'></i>
             </span> */}
             <span className='navbar-brand-txt mx-2'>
               <span className='fw-7'>Shop</span>Sphere
             </span>
-          </Link>
+          
         </div>
 
         <div className='navbar-collapse w-100'>
