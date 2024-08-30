@@ -30,11 +30,13 @@ const cartSlice = createSlice({
             if(isItemInCart){
                 const tempCart = state.carts.map(item => {
                     if(item.id === action.payload.id){
-                        let tempQty = item.quantity + action.payload.quantity;
-                        let tempTotalPrice = tempQty * item.price;
+                        let tempQty = item.quantity + (action.payload.quantity || 1);
+                        let tempTotalPrice = tempQty * (item.discountedPrice || item.price);
 
                         return {
-                            ...item, quantity: tempQty, totalPrice: tempTotalPrice
+                            ...item, 
+                            quantity: tempQty, 
+                            totalPrice: tempTotalPrice
                         }
                     } else {
                         return item;
@@ -44,7 +46,12 @@ const cartSlice = createSlice({
                 state.carts = tempCart;
                 storeInLocalStorage(state.carts);
             } else {
-                state.carts.push(action.payload);
+                const newItem = {
+                    ...action.payload,
+                    quantity: action.payload.quantity || 1,
+                    totalPrice: (action.payload.discountedPrice || action.payload.price) * (action.payload.quantity || 1)
+                };
+                state.carts.push(newItem);
                 storeInLocalStorage(state.carts);
             }
         },
@@ -77,13 +84,13 @@ const cartSlice = createSlice({
                     if(action.payload.type === "INC"){
                         tempQty++;
                         if(tempQty === item.stock) tempQty = item.stock;
-                        tempTotalPrice = tempQty * item.discountedPrice;
+                        tempTotalPrice = tempQty * (item.discountedPrice || item.price);
                     }
 
                     if(action.payload.type === "DEC"){
                         tempQty--;
                         if(tempQty < 1) tempQty = 1;
-                        tempTotalPrice = tempQty * item.discountedPrice;
+                        tempTotalPrice = tempQty * (item.discountedPrice || item.price);
                     }
 
                     return {...item, quantity: tempQty, totalPrice: tempTotalPrice};

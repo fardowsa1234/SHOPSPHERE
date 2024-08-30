@@ -2,14 +2,14 @@ import React from 'react';
 import "./CartPage.scss";
 import { useSelector, useDispatch } from 'react-redux';
 import { shopping_cart } from '../../utils/images';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { Link } from 'react-router-dom'; // Add this import statement
+import { useNavigate } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 import { formatPrice } from '../../utils/helpers';
 import { getAllCarts, removeFromCart, toggleCartQty, clearCart } from '../../store/cartSlice';
 
 const CartPage = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
   const carts = useSelector(getAllCarts);
   const { itemsCount, totalAmount } = useSelector((state) => state.cart);
 
@@ -112,7 +112,7 @@ const CartPage = () => {
               <button 
                 type="button" 
                 className='checkout-btn text-white bg-orange fs-16'
-                onClick={() => navigate('/checkout', { state: { cartItems: carts } })} // Pass cart data to Checkout page
+                onClick={() => navigate('/checkout', { state: { cartItems: carts } })} 
               >
                 Buy Now
               </button>
