@@ -14,7 +14,7 @@ const Sidebar = () => {
     dispatch(fetchAsyncCategories())
   }, [dispatch])
 
-  console.log('Categories in Sidebar:', categories); 
+  console.log('Categories in Sidebar:', categories); // Debug log
 
   return (
     <aside className={`sidebar ${isSidebarOn ? 'hide-sidebar' : ""}`}>
@@ -26,7 +26,7 @@ const Sidebar = () => {
         <ul className='cat-list'>
           {Array.isArray(categories) ? (
             categories.map((category, idx) => {
-              console.log('Rendering category:', category); 
+              console.log('Rendering category:', category); // Debug log
               if (category && typeof category === 'object') {
                 return (
                   <li key={idx} onClick={() => dispatch(setSidebarOff())}>
