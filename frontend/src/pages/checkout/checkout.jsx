@@ -12,7 +12,7 @@ const Checkout = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     console.log(data);
-    alert('Thank you for shopping with us:Order completed!');
+    alert('Checkout successful!');
   };
 
   const updateQuantity = (id, type) => {
@@ -22,7 +22,7 @@ const Checkout = () => {
         return { 
           ...item, 
           quantity: newQty,
-          totalPrice: item.discountedPrice * newQty
+          totalPrice: (item.price || item.discountedPrice) * newQty
         };
       }
       return item;
@@ -57,10 +57,10 @@ const Checkout = () => {
         {cartItems.map((item) => (
           <div key={item.id} className="checkout-summary-item">
             <div className="item-details">
-              <img src={item.thumbnail} alt={item.title} className="item-image" />
+              <img src={`http://localhost:5000/uploads/${item.image}`} alt={item.title} className="item-image2" />
               <div>
                 <h3>{item.title}</h3>
-                <p>{formatPrice(item.discountedPrice)} each</p>
+                <p>{formatPrice(item.price || item.discountedPrice)} each</p>
               </div>
             </div>
             <div className="item-actions">

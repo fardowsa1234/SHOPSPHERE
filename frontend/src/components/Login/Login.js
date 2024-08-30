@@ -43,11 +43,11 @@ const Login = () => {
       return;
     }
 
-    const url = "http://localhost:5000/login";
+    const url = "http://localhost:5000/api/auth/local";
     try {
       const { data } = await axios.post(url, user);
       if (data.jwt) {
-        // Removed storeUser and its usage
+        localStorage.setItem('token', data.jwt);
         toast.success("Logged in successfully!", {
           hideProgressBar: true,
         });
@@ -107,7 +107,6 @@ const Login = () => {
             Login
           </Button>
         </form>
-        
         <p className="signup-text">
           Don't have an account? <Link to="/registration">Sign up</Link>
         </p>
